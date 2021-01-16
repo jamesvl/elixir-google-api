@@ -255,7 +255,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       |> Request.method(:delete)
       |> Request.url("/storage/v1/b/{bucket}/o/{object}", %{
         "bucket" => URI.encode(bucket, &URI.char_unreserved?/1),
-        "object" => URI.encode(object, &(URI.char_unreserved?(&1) || &1 == ?/))
+        "object" => URI.encode(object, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -327,7 +327,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       |> Request.method(:get)
       |> Request.url("/storage/v1/b/{bucket}/o/{object}", %{
         "bucket" => URI.encode(bucket, &URI.char_unreserved?/1),
-        "object" => URI.encode(object, &(URI.char_unreserved?(&1) || &1 == ?/))
+        "object" => URI.encode(object, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -880,7 +880,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       |> Request.method(:patch)
       |> Request.url("/storage/v1/b/{bucket}/o/{object}", %{
         "bucket" => URI.encode(bucket, &URI.char_unreserved?/1),
-        "object" => URI.encode(object, &(URI.char_unreserved?(&1) || &1 == ?/))
+        "object" => URI.encode(object, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1207,7 +1207,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       |> Request.method(:put)
       |> Request.url("/storage/v1/b/{bucket}/o/{object}", %{
         "bucket" => URI.encode(bucket, &URI.char_unreserved?/1),
-        "object" => URI.encode(object, &(URI.char_unreserved?(&1) || &1 == ?/))
+        "object" => URI.encode(object, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
